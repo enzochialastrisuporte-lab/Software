@@ -1,0 +1,8 @@
+node_modules
+.env
+.env.local
+tmp_zip
+.git
+.gitignore
+Dockerfile
+.dockerignore

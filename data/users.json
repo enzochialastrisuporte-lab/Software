@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Enzo Chialastri",
+    "email": "enzochialastrisuporte@gmail.com",
+    "password": "Enzo6487",
+    "role": "admin",
+    "status": "approved"
+  },
+  {
+    "id": 2,
+    "name": "Vinicius",
+    "email": "admin@automacaoone.com",
+    "password": "admin123",
+    "role": "owner",
+    "status": "approved"
+  }
+]

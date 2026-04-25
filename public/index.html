@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel ChialastriAutomações</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="auth-screen" class="auth-screen">
+    <div class="auth-card glass">
+      <div class="pill">Painel inteligente</div>
+      <h1>Painel ChialastriAutomações</h1>
+      <p>Entre com sua conta ou solicite acesso para a operação.</p>
+
+      <div class="tabs">
+        <button class="tab active" data-auth-tab="login">Login</button>
+        <button class="tab" data-auth-tab="register">Criar conta</button>
+      </div>
+
+      <form id="login-form" class="auth-form">
+        <label>E-mail</label>
+        <input id="login-email" type="email" placeholder="seuemail@gmail.com" required />
+        <label>Senha</label>
+        <input id="login-password" type="password" placeholder="Sua senha" required />
+        <button class="primary-btn" type="submit">Entrar</button>
+      </form>
+
+      <form id="register-form" class="auth-form hidden">
+        <label>Nome</label>
+        <input id="register-name" placeholder="Seu nome" required />
+        <label>E-mail</label>
+        <input id="register-email" type="email" placeholder="Seu e-mail" required />
+        <label>Senha</label>
+        <input id="register-password" type="password" placeholder="Crie uma senha" required />
+        <label>Cargo solicitado</label>
+        <select id="register-role">
+          <option value="owner">Dono</option>
+          <option value="gestor_chefe">Gestor-chefe</option>
+          <option value="gestor">Gestor</option>
+        </select>
+        <button class="primary-btn" type="submit">Enviar solicitação</button>
+      </form>
+
+      <div id="auth-message" class="message"></div>
+      <div class="hint" style="text-align:center; padding-top:10px;">
+        <strong>Painel ChialastriAutomações</strong>
+      </div>
+    </div>
+  </div>
+
+  <div id="app" class="app-shell hidden">
+    <aside class="sidebar glass">
+      <div>
+        <div class="sidebar-head">
+          <img src="logo.png" alt="Chialastri Automações" class="logo-img" />
+          <div>
+            <strong>Painel ChialastriAutomações</strong>
+            <div class="muted small">Operação inteligente</div>
+          </div>
+        </div>
+
+        <input id="nav-search" class="sidebar-search" placeholder="Buscar função..." />
+
+        <nav id="nav-list" class="nav-list">
+          <button class="nav-item active" data-page="dashboard">Dashboard</button>
+          <button class="nav-item" data-page="empresas">Empresas</button>
+          <button class="nav-item" data-page="escalados">Escalados</button>
+          <button class="nav-item" data-page="membros">Membros</button>
+          <button class="nav-item" data-page="metricas">Métricas</button>
+          <button class="nav-item super-admin-only" data-page="fluxos">Fluxos</button>
+          <button class="nav-item" data-page="configuracoes">Configurações</button>
+          <button class="nav-item admin-only" data-page="solicitacoes">Solicitações</button>
+        </nav>
+      </div>
+
+      <div class="sidebar-foot glass-soft" style="text-align:center; display:flex; flex-direction:column; align-items:center; gap:4px;">
+        <div id="sidebar-user-name" style="font-weight:600;">Sr(a). Usuário</div>
+        <div id="sidebar-user-role" class="muted small" style="margin-bottom:8px;">Cargo</div>
+        <button id="logout-btn" class="secondary-btn full">Sair</button>
+      </div>
+    </aside>
+
+    <main class="content" id="content-root">
+      <header class="topbar glass-soft">
+        <div>
+          <div class="pill">Painel de Controle da ChialastriAutomações</div>
+          <h2 id="welcome-title">Sr(a). Usuário, seja bem-vindo(a)</h2>
+          <div id="welcome-subtitle" class="muted">Cargo: admin</div>
+        </div>
+        <div class="avatar" id="avatar" style="overflow:hidden;">A</div>
+      </header>
+
+      <section id="page-dashboard" class="page active"></section>
+      <section id="page-empresas" class="page"></section>
+      <section id="page-escalados" class="page"></section>
+      <section id="page-membros" class="page"></section>
+      <section id="page-metricas" class="page"></section>
+      <section id="page-fluxos" class="page"></section>
+      <section id="page-configuracoes" class="page"></section>
+      <section id="page-solicitacoes" class="page"></section>
+    </main>
+  </div>
+
+  <audio id="plimSound" preload="auto" src="https://www.myinstants.com/media/sounds/pling.mp3" style="display:none"></audio>
+  <script src="app.js"></script>
+</body>
+</html>
